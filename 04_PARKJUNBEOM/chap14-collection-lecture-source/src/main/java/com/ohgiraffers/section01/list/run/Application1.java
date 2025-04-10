@@ -5,12 +5,12 @@ import java.util.*;
 public class Application1 {
 
     public static void main(String[] args) {
-
         /*
         * 컬렉션 프레임워크(Collection Framework)
         * 자바에서 컬렉션 프레임워크는 여러 개의 다양한 데이터들을 쉽고 효과적으로 처리할 수 있도록
         * 표준화된 방법을 제공하는 클래스들의 집합을 의미한다.
-        * 즉, 데이터는 효율적으로 저장하는 자료구조와 데이터를 처리하는 알고리즘을 미리 구현해놓은 클래스를 말한다.
+        * 즉, 데이터는 효율적으로 저장하는 자료구조와 데이터를 처리하는 알고리즘을
+        * 미리 구현해놓은 클래스를 말한다.
         * */
 
         /*
@@ -20,15 +20,13 @@ public class Application1 {
         * */
 
         ArrayList alist = new ArrayList();
-        ArrayList blist = new ArrayList();
-
 
         List list = new ArrayList();
 
         Collection clist = new ArrayList();
 
-        alist.add("apple"); // alist[0] = "apple";과 비슷한 동작
-        alist.add(123); // autoboxing
+        alist.add("apple");  // alist[0] = "apple";과 비슷한 동작
+        alist.add(123);  // autoboxing(값 => 객체)
         alist.add(45.67);
         alist.add(new Date());
 
@@ -41,32 +39,43 @@ public class Application1 {
         System.out.println("alist.size() = " + alist.size());
 
         for (int i = 0; i < alist.size(); i++) {
-            alist.get(i);
-            System.out.println(alist.get(i));
+            System.out.println(i + " | " + alist.get(i));
         }
 
-        // add, remove(제거), get(가져오기), set(수정)
+        alist.add("apple");
+        alist.add(2, "banana"); // index값은 내가 넣고자하는 위치값
+
+        System.out.println("alist = " + alist);
+        // alist = [apple, 123, banana, 45.67, Tue Apr 08 16:16:38 KST 2025, apple]
+
+        alist.remove(2);
+        System.out.println("alist = " + alist);
+
+        alist.set(4, Boolean.valueOf(true));
+        System.out.println("alist = " + alist);
 
         List<String> stringList = new ArrayList<>();
-
-        stringList.add("orange");
         stringList.add("apple");
+        //stringList.add(123); // 에러발생
         stringList.add("banana");
+        stringList.add("orange");
         stringList.add("mango");
+        stringList.add("grape");
 
-        Collections.sort(stringList); // String에는 문자열 오름차순에 대한 정의가 되어있다.
+        System.out.println("stringList = " + stringList);
+        
+        Collections.sort(stringList);   // String에는 문자열 오름차순(Ascending)에 대한 정의가 되어있다.
         System.out.println("stringList = " + stringList);
 
         List<Integer> integerList = new ArrayList<>();
         integerList.add(4);
+        integerList.add(20);
         integerList.add(5);
-        integerList.add(6);
-        integerList.add(1);
-        integerList.add(2);
+        integerList.add(8);
+        integerList.add(14);
 
-        Collections.sort(integerList);
         System.out.println("integerList = " + integerList);
-        Collections.reverse(integerList);
+        Collections.sort(integerList);
         System.out.println("integerList = " + integerList);
 
         stringList = new LinkedList<>(stringList);
@@ -84,14 +93,19 @@ public class Application1 {
          * next() : 다음 요소를 반환
          * */
         Iterator<String> dIter = ((LinkedList<String>) stringList).descendingIterator();
-//        while (dIter.hasNext()) {
+//        while(dIter.hasNext()) {
+//            System.out.println(dIter.next());
+//        }
+//
+//        while(dIter.hasNext()) {
 //            System.out.println(dIter.next());
 //        }
 
-        List<String> descList = new ArrayList<>(); // 받아줄 공간 만들기
-        while (dIter.hasNext()) {
+        List<String> descList = new ArrayList<>();
+        while(dIter.hasNext()) {
             descList.add(dIter.next());
         }
+
         System.out.println("descList = " + descList);
     }
 }

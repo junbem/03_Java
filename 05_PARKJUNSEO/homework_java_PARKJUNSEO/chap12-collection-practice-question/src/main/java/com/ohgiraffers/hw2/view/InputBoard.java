@@ -12,20 +12,23 @@ public class InputBoard {
         String boardTitle = inputBoardTitle();
         System.out.println("작성자 이름을 입력해주세요.");
         String boardWriter = sc.nextLine();
+        int boardNo = inputBoardNo();
         Date boardDate = new Date();
         String boardContent = inputBoardContent();
-        int readCount = 0; // 이거 어카지
+        int readCount = 0;
 
-        BoardDTO boardDTO = new BoardDTO(boardTitle, boardWriter, boardDate, boardContent, readCount);
+        BoardDTO boardDTO = new BoardDTO(boardNo, boardTitle, boardWriter, boardDate, boardContent, readCount);
         return boardDTO;
     };
 
     public int inputBoardNo() {
-        return 0;
+        System.out.println("글 번호를 입력하세요 : ");
+        int boardNo = sc.nextInt();
+        return boardNo;
     };
 
     public String inputBoardTitle() {
-        System.out.println("책 이름을 입력해주세요 : ");
+        System.out.println("책 제목을 입력해주세요 : ");
         String boardTitle = sc.nextLine();
         return boardTitle;
     };

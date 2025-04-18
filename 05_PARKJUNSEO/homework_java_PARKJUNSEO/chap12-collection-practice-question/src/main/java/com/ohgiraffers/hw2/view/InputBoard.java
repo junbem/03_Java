@@ -28,7 +28,7 @@ public class InputBoard {
     };
 
     public String inputBoardTitle() {
-        System.out.println("책 제목을 입력해주세요 : ");
+        System.out.println("글 제목을 입력해주세요 : ");
         String boardTitle = sc.nextLine();
         return boardTitle;
     };

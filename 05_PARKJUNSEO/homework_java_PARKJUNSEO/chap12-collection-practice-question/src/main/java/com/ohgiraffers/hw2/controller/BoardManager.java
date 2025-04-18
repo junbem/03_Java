@@ -9,7 +9,7 @@ import java.util.Comparator;
 
 public class BoardManager {
 
-    private ArrayList<BoardDTO> boardList;
+    private ArrayList<BoardDTO> boardList= new ArrayList<>();
 
     private ResultPrinter rp;
 
@@ -27,15 +27,18 @@ public class BoardManager {
         rp.successPage("insertBoard");
     }
 
-    ;
 
     public void selectAllList() {
-        for (BoardDTO board : boardList) {
-            System.out.println(board);
+
+        if (boardList == null || boardList.isEmpty()) {
+            System.out.println("게시글이 존재하지 않습니다.");
+        } else {
+            for (BoardDTO board : boardList) {
+                System.out.println(board);
+            }
         }
     }
 
-    ;
 
     public void selectOneBoard(int boardNo) {
 
@@ -97,7 +100,7 @@ public class BoardManager {
         for (int i = 0; i < boardList.size(); i++) {
             if (boardList.get(i).getBoardNo() == boardNo) {
                 boardNoToUpdate = boardList.get(i).getBoardNo();
-                boardList.remove(i); 
+                boardList.remove(i);
                 break;
             }
         }
@@ -131,6 +134,7 @@ public class BoardManager {
         rp.printAllList(boardList);
     }
 }
+
 
 
 

@@ -10,8 +10,8 @@ public class BoardMenu {
 
     Scanner sc = new Scanner(System.in);
 
-    private BoardManager bm;
-    private InputBoard ib;
+    private BoardManager bm = new BoardManager();  // 이 줄 중요
+    private InputBoard ib = new InputBoard();
 
     public void mainMenu() {
         String menu = """

@@ -3,6 +3,10 @@ package com.ohgiraffers.section01.level02.normal;
 public class Application6 {
 
     public static void main(String[] args) {
+        String[] sArr = new String[3];
+        sArr[0] = "양념";
+        sArr[1] = "뿌링클";
+        sArr[2] = "후라이드";
 
         /*
          * 사용자가 입력한 값이 배열에 있는지 검색하여

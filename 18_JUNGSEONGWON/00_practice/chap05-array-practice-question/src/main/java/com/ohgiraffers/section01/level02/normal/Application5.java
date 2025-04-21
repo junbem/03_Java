@@ -41,4 +41,3 @@ public class Application5 {
          *	i 개수 : 2
          * */
     }
-}

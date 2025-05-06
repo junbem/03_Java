@@ -79,7 +79,10 @@ public class Application {
      * </pre>
      * */
     private void test5() {
+        java.util.function.Predicate<String> isBlankAfterTrim = s -> s.trim().length() == 0;
         List<String> strList = Arrays.asList("abc", "", "대한민국", " ");
-        Function<String, >
+        for (String str : strList) {
+            System.out.println("\"" + str + "\" => " + isBlankAfterTrim.test(str));
+        }
     }
 }
